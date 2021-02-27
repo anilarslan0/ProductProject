@@ -29,10 +29,13 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
+        //Claim
+        //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-          IResult result=  BusinessRules.Run(CheckIfProductNameExist(product.ProductName), CheckIfProductCountOfCategoryCorrect(product.CategoryId),CheckIfCategoryLimitExceded());
+          IResult result=  BusinessRules.Run(CheckIfProductNameExist(product.ProductName),
+              CheckIfProductCountOfCategoryCorrect(product.CategoryId),CheckIfCategoryLimitExceded());
 
             if (result != null)
             {
