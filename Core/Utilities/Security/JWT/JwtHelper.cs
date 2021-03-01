@@ -12,21 +12,21 @@ using System.Text;
 
 namespace Core.Utilities.Security.JWT
 {
-    public class JwtHelper : ITokenHelper
+    public class JwtHelper : ITokenHelper //JsonWebToken
     {
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; } 
         private TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
-        public JwtHelper(IConfiguration configuration)
+        public JwtHelper(IConfiguration configuration) //appsetting içerisindeki bilgiyi configuration vasıtasıyla okuruz
         {
             Configuration = configuration;
-            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();//tokenoptions kısmını okur
 
         }
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
         {
             _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
-            var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
+            var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey); //token için özel bir anahtar oluştururuz(securitykey)
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
             var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaims);
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
@@ -44,17 +44,17 @@ namespace Core.Utilities.Security.JWT
             SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
         {
             var jwt = new JwtSecurityToken(
-                issuer: tokenOptions.Issuer,
+                issuer: tokenOptions.Issuer, 
                 audience: tokenOptions.Audience,
                 expires: _accessTokenExpiration,
-                notBefore: DateTime.Now,
+                notBefore: DateTime.Now, //tokenın expression bilgisi şuandan önce ise geçerli değil
                 claims: SetClaims(user, operationClaims),
                 signingCredentials: signingCredentials
             );
             return jwt;
         }
 
-        private IEnumerable<Claim> SetClaims(User user, List<OperationClaim> operationClaims)
+        private IEnumerable<Claim> SetClaims(User user, List<OperationClaim> operationClaims)//user bilgisi,claimler
         {
             var claims = new List<Claim>();
             claims.AddNameIdentifier(user.Id.ToString());
