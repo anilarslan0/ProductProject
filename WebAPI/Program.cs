@@ -22,10 +22,10 @@ namespace WebAPI
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory()) //Install Packet (Autofac.Extensions.DependencyInjection)
-                .ConfigureContainer<ContainerBuilder>(builder =>
+                .ConfigureContainer<ContainerBuilder>(builder =>   
                 {
                     builder.RegisterModule(new AutofacBusinnessModule());
-                })
+                })//Web apýye sen kendi alt yapýný kullanma ýoc olarak (fabrika olarak) autofac kullan demek 
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

@@ -6,17 +6,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;//Dikkat
-namespace Core.Aspects.Performance
+namespace Core.Aspects.AutoFac.Performance
 {
     public class PerformanceAspect : MethodInterception
     {
         private int _interval;
         private Stopwatch _stopwatch; //timer
 
-        public PerformanceAspect(int interval) 
+        public PerformanceAspect(int interval)
         {
             _interval = interval;
-            _stopwatch = ServiceTool.ServiceProvider.GetService<Stopwatch>(); 
+            _stopwatch = ServiceTool.ServiceProvider.GetService<Stopwatch>();
         }
 
 
@@ -35,7 +35,6 @@ namespace Core.Aspects.Performance
         }
     }
 }
-
 
 /*
  Kullanımı:  [PerformanceAspect(5)]
