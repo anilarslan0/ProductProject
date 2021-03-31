@@ -8,11 +8,11 @@ Product projesi .Net Core Freamework ve C# kullanılarak kodlanmış bir backend
 4. Entities Katmanı
 5. Web API Katmanı
 
-Business: Projemizin iş katmanıdır.İş kuralları, veri kontrolleri, validasyonlar, IoC Container'lar ve yetki kontrolleri kullanılmaktadır.
-DataAccess: Projenin, Veritabanı ile bağını kuran katmandır. Projemizde bu katmanda EntityFramework kullanılmıştır.
-Core: Projenin evrensel bölümlerinin bulunduğu katmandır. Bu katmanda bulunan yapılar her projede ortaktır.
-Entities: Veritabanındaki tablolarımızın projemizde nesne olarak kullanılması için oluşturulmuştur. DTO nesnelerinide barındırmaktadır.
-WebAPI: Prjenin Restful API Katmanıdır. Kullanılan methodlar: Get, Post, Put, Delete
+- **Business:** Projemizin iş katmanıdır.İş kuralları, veri kontrolleri, validasyonlar, IoC Container'lar ve yetki kontrolleri kullanılmaktadır.
+- **DataAccess:** Projenin, Veritabanı ile bağını kuran katmandır. Projemizde bu katmanda EntityFramework kullanılmıştır.
+- **Core:** Projenin evrensel bölümlerinin bulunduğu katmandır. Bu katmanda bulunan yapılar her projede ortaktır.
+- **Entities:** Veritabanındaki tablolarımızın projemizde nesne olarak kullanılması için oluşturulmuştur. DTO nesnelerinide barındırmaktadır.
+- **WebAPI:** Prjenin Restful API Katmanıdır. Kullanılan methodlar: Get, Post, Put, Delete
 
 
 ##Kullanılan Teknolojiler
