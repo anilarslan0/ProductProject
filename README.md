@@ -35,7 +35,6 @@ WebAPI: Prjenin Restful API Katmanıdır. Kullanılan methodlar: Get, Post, Put,
  - Validation
 - Extensions
  - Claim
-  - Claim Principal
  - Exception Middleware
  - Service Collection
  - Error Handling
