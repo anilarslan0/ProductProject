@@ -16,8 +16,8 @@ WebAPI: Prjenin Restful API Katmanıdır. Kullanılan methodlar: Get, Post, Put,
 
 
 ##Kullanılan Teknolojiler
--Restful API
--Result Türleri
+- Restful API
+- Result Türleri
 -Interceptor
 -Autofac
  -IoC Containers
