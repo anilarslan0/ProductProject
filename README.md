@@ -15,7 +15,7 @@ Product projesi .Net Core Freamework ve C# kullanılarak kodlanmış bir backend
 - **WebAPI:** Prjenin Restful API Katmanıdır. Kullanılan methodlar: Get, Post, Put, Delete
 
 
-##Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 - Restful API
 - Result Türleri
 - Interceptor
