@@ -31,8 +31,6 @@ Product projesi .Net Core Freamework ve C# kullanılarak kodlanmış bir backend
 - JWT Authentication
 - Repository Design Pattern
 - Cross Cutting Concerns
- - Caching
- - Validation
 - Extensions
  - Claim
  - Exception Middleware
